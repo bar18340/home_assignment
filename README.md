@@ -2,6 +2,13 @@
 
 A full-stack application that allows uploading SVG files, processing them on the backend, storing the processed data in MongoDB, and displaying an interactive preview using HTML Canvas on the frontend.
 
+## 🚀 Live Demo
+
+Want to deploy this app? See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for step-by-step instructions to deploy to:
+- **Frontend**: Vercel (free)
+- **Backend**: Render (free)
+- **Database**: MongoDB Atlas (free)
+
 ## Features
 
 - **Upload SVG Files**: Simple drag-and-drop or file selection interface
