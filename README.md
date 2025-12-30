@@ -4,10 +4,16 @@ A full-stack application that allows uploading SVG files, processing them on the
 
 ## 🚀 Live Demo
 
-Want to deploy this app? See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for step-by-step instructions to deploy to:
-- **Frontend**: Vercel (free)
-- **Backend**: Render (free)
-- **Database**: MongoDB Atlas (free)
+**🌐 [Try the Live App](https://svg-processor-eight.vercel.app/)**
+
+The application is deployed and running on:
+- **Frontend**: [Vercel](https://svg-processor-eight.vercel.app/)
+- **Backend API**: [Render](https://svg-processor-backend.onrender.com)
+- **Database**: MongoDB Atlas
+
+> **Note**: First load may take 30-60 seconds as the free tier backend wakes up from sleep.
+
+Want to deploy your own instance? See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for complete instructions.
 
 ## Features
 
