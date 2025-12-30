@@ -75,18 +75,23 @@ cd home_assignment
 
 ### 2. Set Up MongoDB
 
-#### Option 1: Using Docker (Recommended)
-
-```bash
-docker run -d -p 27017:27017 --name mongodb mongo:latest
-```
-
-#### Option 2: Local Installation
-
 Install MongoDB locally following the [official documentation](https://docs.mongodb.com/manual/installation/).
 
-Start MongoDB:
+**For Windows:**
+- Download from https://www.mongodb.com/try/download/community
+- Install as a Windows Service (recommended)
+- MongoDB will start automatically
+
+**For macOS:**
 ```bash
+brew install mongodb-community
+brew services start mongodb-community
+```
+
+**For Linux:**
+```bash
+# Follow official docs for your distribution
+# Start MongoDB:
 mongod --dbpath /path/to/data/directory
 ```
 
@@ -241,29 +246,7 @@ The frontend uses Vite's proxy configuration (in `vite.config.ts`) to forward `/
 
 ## Building for Production
 
-### Using Docker (Recommended)
-
-The easiest way to deploy the application is using Docker Compose:
-
-```bash
-# Build and start all services (MongoDB, Backend, Frontend)
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop all services
-docker-compose down
-```
-
-The application will be available at:
-- Frontend: `http://localhost`
-- Backend API: `http://localhost:3001`
-- MongoDB: `localhost:27017`
-
-### Manual Build
-
-#### Backend
+### Backend
 
 ```bash
 cd backend
@@ -273,14 +256,14 @@ npm start
 
 The compiled JavaScript will be in the `dist/` directory.
 
-#### Frontend
+### Frontend
 
 ```bash
 cd frontend
 npm run build
 ```
 
-The production-ready static files will be in the `dist/` directory.
+The production-ready static files will be in the `dist/` directory. You can serve these using any static file server (nginx, Apache, etc.).
 
 ## Development Notes
 
@@ -295,9 +278,11 @@ The production-ready static files will be in the `dist/` directory.
 
 ### MongoDB Connection Issues
 
-- Ensure MongoDB is running: `docker ps` or `brew services list`
-- Check the `MONGODB_URI` in your `.env` file
-- Verify MongoDB is accessible at the specified port
+- **Windows**: Check MongoDB service is running in Services
+- **macOS**: Run `brew services list` to check MongoDB status
+- **Linux**: Run `sudo systemctl status mongod`
+- Check the `MONGODB_URI` in your `backend/.env` file
+- Verify MongoDB is accessible at the specified port (default: 27017)
 
 ### Port Already in Use
 
